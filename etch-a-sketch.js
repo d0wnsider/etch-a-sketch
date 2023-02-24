@@ -1,6 +1,6 @@
 function gridCalculate () {
-    for (let x = 0; x < row; x++) {
-        for (let y = 0; y < column; y++) {
+    for (let x = 0; x < gridSize; x++) {
+        for (let y = 0; y < gridSize; y++) {
             const square = document.createElement('div');
             square.className = 'square';
             container.appendChild(square);
@@ -22,31 +22,29 @@ function enterGrid () {
     do {
         userInput = Number(prompt("Enter grid size: "));
     } while (userInput > 100);
-    row = userInput;
-    column = userInput;
+    gridSize = userInput;
 }
 
 function removeGrid () {
-    const removeElement = document.querySelector('.square');
-    removeElement.remove();
+    const removeElement = document.querySelectorAll('.square');
+    removeElement.forEach(item => item.remove());
 }
 
 let userInput = null;
-let row = 1;
-let column = 1;
+let gridSize = 3;
 const container = document.querySelector('.container');
 const button = document.querySelector('.button');
 
 function game () {
     gridCalculate();
     squareColorHover();
-
-    button.addEventListener('click', () => {
-        enterGrid();
-        removeGrid();
-        gridCalculate();
-        squareColorHover();
-    });
 }
+
+button.addEventListener('click', () => {
+    enterGrid();
+    removeGrid();
+    gridCalculate();
+    squareColorHover();
+});
 
 game();

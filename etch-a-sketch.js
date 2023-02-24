@@ -3,7 +3,6 @@ function gridCalculate () {
         for (let y = 0; y < column; y++) {
             const square = document.createElement('div');
             square.className = 'square';
-            square.textContent = y + 1;
             container.appendChild(square);
         }
     }
@@ -19,9 +18,35 @@ function squareColorHover () {
     });
 }
 
-let row = 16;
-let column = 16;
-const container = document.querySelector('.container');
+function enterGrid () {
+    do {
+        userInput = Number(prompt("Enter grid size: "));
+    } while (userInput > 100);
+    row = userInput;
+    column = userInput;
+}
 
-gridCalculate();
-squareColorHover();
+function removeGrid () {
+    const removeElement = document.querySelector('.square');
+    removeElement.remove();
+}
+
+let userInput = null;
+let row = 1;
+let column = 1;
+const container = document.querySelector('.container');
+const button = document.querySelector('.button');
+
+function game () {
+    gridCalculate();
+    squareColorHover();
+
+    button.addEventListener('click', () => {
+        enterGrid();
+        removeGrid();
+        gridCalculate();
+        squareColorHover();
+    });
+}
+
+game();

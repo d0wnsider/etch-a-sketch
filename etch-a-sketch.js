@@ -1,6 +1,7 @@
 let gridSize = 16;
 const size = document.querySelector('#size');
 const clear = document.querySelector('#clear');
+let value = document.querySelector('#color').getAttribute('value');
 const container = document.querySelector('.container');
 
 gridCalculate = (gridSize) => {
@@ -21,7 +22,7 @@ squareColorHover = () => {
     const squareColor = document.querySelectorAll('.box');
     squareColor.forEach(item => {
         item.addEventListener('mouseenter',() => {
-            item.style.backgroundColor = 'black';
+            item.style.backgroundColor = value;
         });
     });
 }
@@ -43,7 +44,7 @@ size.addEventListener('click', () => {
     gridSize = enterGrid();
     removeGrid();
     gridCalculate(gridSize);
-    squareColorHover();
+    squareColorHover(color);
 });
 
 clear.addEventListener('click', () => {
@@ -52,6 +53,11 @@ clear.addEventListener('click', () => {
             item.style.backgroundColor = '';
     });
 });
+
+color.addEventListener('change', (e) => {
+    value = e.target.value;
+});
+
 // start
 gridCalculate(gridSize);
 squareColorHover();

@@ -20,8 +20,16 @@ body {
     align-items: center;
     padding: 20px;
     gap: 20px;
-    color: gold;
-    text-shadow: white 0px 0px 10px;
+    text-shadow: gold 1px 1px 10px;
+}
+
+.h1 {
+    background-color: rgb(82, 19, 145);
+    border-radius: 50%;
+    color: red;
+    -webkit-text-stroke: .8px gold;
+    /* box-shadow: 1px 1px 100px gold; */
+    box-shadow: 1px 1px 20px 10px aqua;
 }
 
 .button {
@@ -29,6 +37,18 @@ body {
     color: white;
     padding: 10px;
     cursor: pointer;
+    border-radius: 10%;
+    border-color: rgb(82, 19, 145);
+}
+
+#size, #clear {
+    color: red;
+    -webkit-text-stroke: .3px gold;
+}
+
+.button:hover {
+    transform: scale(1.2); 
+    border-color: gold;
 }
 
 .buttonContainer {
@@ -44,28 +64,39 @@ body {
     justify-content: center;
     align-items: center;
     gap: 5px;
+    color: red;
+    -webkit-text-stroke: gold .5px;
 }
 
 .container {
     display: grid;
     border: 3px solid aqua;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
+    box-shadow: 1px 1px 30px gold;
 }
 /* random color bg */
 #random-color {
-    transition: background 3s;
-    transition-timing-function: ease-in;
+    background: linear-gradient(to right, rgba(0, 255, 255, 0.782), rgba(0, 255, 0, 0.824),rgba(255, 0, 0, 0.719), rgba(0, 0, 255, 0.692),rgba(255, 217, 0, 0.82));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .box {
-    background-color: rgba(128, 128, 128, 0.471);
-    border: .1px solid #9a9a9a1e;
+    background-color: transparent;
+    border: .1px solid #9a9a9a37;
+    border-radius: 15%;
 }
 /* bigger screen */
-@media only screen and (min-width: 1700px) {
+@media only screen and (min-width: 2000px) {
     .container {
         width: 800px;
         height: 800px;
+    }
+}
+@media only screen and (min-width: 1500px) {
+    .container {
+        width: 600px;
+        height: 600px;
     }
 }

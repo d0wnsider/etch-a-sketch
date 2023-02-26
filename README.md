@@ -8,6 +8,6 @@
 - [x] User can input a custom size grid canvas
 
 *Optional*
-- [ ] Color picker or % addition of color
+- [x] Color picker or % addition of color
 - [x] Eraser
 - [ ] Option to save in file format!

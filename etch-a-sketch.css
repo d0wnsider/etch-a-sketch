@@ -37,8 +37,6 @@ body {
 }
 
 .container {
-    width: 500px;
-    height: 500px;
     display: grid;
     border: 3px solid aqua;
 }
@@ -46,4 +44,20 @@ body {
 .box {
     background-color: rgba(128, 128, 128, 0.471);
     border: .1px solid #9a9a9a7e;
+}
+/* bigger screen */
+@media only screen and (min-width: 1000px) {
+    .container {
+        width: 1000px;
+        height: 1000px;
+        display: grid;
+        border: 3px solid aqua;
+    }
+}
+/* small screen */
+@media only screen and (min-width: 500px) {
+    .container {
+        width: 500px;
+        height: 500px;
+    }
 }

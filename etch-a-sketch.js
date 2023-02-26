@@ -53,6 +53,10 @@ randomColorHover = () => {
         });
     });
 }
+// random bg colors for button
+setBackgroundColor = () => {
+    randomColor.style.backgroundColor = getRandomColor();
+}
 
 size.addEventListener('click', () => {
     gridSize = enterGrid();
@@ -79,3 +83,4 @@ randomColor.addEventListener('click', (e) => {
 // start
 gridCalculate(gridSize);
 squareColorHover();
+setBackgroundColor();

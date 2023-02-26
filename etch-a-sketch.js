@@ -1,6 +1,7 @@
 let gridSize = 16;
 const size = document.querySelector('#size');
 const clear = document.querySelector('#clear');
+const randomColor = document.querySelector('#random-color');
 let value = document.querySelector('#color').getAttribute('value');
 const container = document.querySelector('.container');
 
@@ -39,6 +40,19 @@ removeGrid = () => {
     const removeElement = document.querySelectorAll('.box');
     removeElement.forEach(item => item.remove());
 }
+// random rgb color
+getRandomColor = () => {
+    return `rgb(${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)}, ${Math.floor(Math.random() * 257)})`;
+}
+
+randomColorHover = () => {
+    const squareColor = document.querySelectorAll('.box');
+    squareColor.forEach(item => {
+        item.addEventListener('mouseenter',() => {
+            item.style.backgroundColor = getRandomColor();
+        });
+    });
+}
 
 size.addEventListener('click', () => {
     gridSize = enterGrid();
@@ -56,6 +70,10 @@ clear.addEventListener('click', () => {
 
 color.addEventListener('change', (e) => {
     value = e.target.value;
+});
+
+randomColor.addEventListener('click', (e) => {
+    randomColorHover();
 });
 
 // start

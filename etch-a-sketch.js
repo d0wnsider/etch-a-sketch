@@ -14,16 +14,16 @@ squareColorHover = () => {
     const squareColor = document.querySelectorAll('.square');
     squareColor.forEach(item => {
         item.addEventListener('mouseenter',() => {
-            item.style.backgroundColor = 'orange';
+            item.style.backgroundColor = 'black';
         });
     });
 }
 
-enterGrid = (a) => {
+enterGrid = () => {
     let userInput;
     do {
         userInput = Number(prompt("Enter grid size: "));
-    } while (userInput > 100);
+    } while (userInput > 100 || userInput < 1);
     return userInput;
 }
 

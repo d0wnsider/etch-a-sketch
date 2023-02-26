@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'PT Serif', serif;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
     background-color: blueviolet;
 }
 
-header {
+.header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +38,7 @@ header {
     border: 3px solid aqua;
 }
 
-.square {
+.box {
     background-color: grey;
-    border: .1px solid rgb(154, 154, 154);
+    border: .1px solid #9a9a9a;
 }

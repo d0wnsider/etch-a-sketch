@@ -1,4 +1,4 @@
-function gridCalculate () {
+gridCalculate = (gridSize) => {
     for (let x = 0; x < gridSize; x++) {
         for (let y = 0; y < gridSize; y++) {
             const square = document.createElement('div');
@@ -6,45 +6,42 @@ function gridCalculate () {
             container.appendChild(square);
         }
     }
+    container.style.setProperty(`grid-template-columns`,`repeat(${gridSize},1fr)`);
 }
 
-function squareColorHover () {
+squareColorHover = () => {
     // hovering color using forEach on Nodelist squareColor and putting addEventListener each element
     const squareColor = document.querySelectorAll('.square');
     squareColor.forEach(item => {
         item.addEventListener('mouseenter',() => {
-            item.style.backgroundColor = 'orange';
+            item.style.backgroundColor = 'black';
         });
     });
 }
 
-function enterGrid () {
+enterGrid = () => {
+    let userInput;
     do {
         userInput = Number(prompt("Enter grid size: "));
-    } while (userInput > 100);
-    gridSize = userInput;
+    } while (userInput > 100 || userInput < 1);
+    return userInput;
 }
 
-function removeGrid () {
+removeGrid = () => {
     const removeElement = document.querySelectorAll('.square');
     removeElement.forEach(item => item.remove());
 }
 
-let userInput = null;
-let gridSize = 3;
-const container = document.querySelector('.container');
+let gridSize = 16;
 const button = document.querySelector('.button');
+const container = document.querySelector('.container');
 
-function game () {
-    gridCalculate();
-    squareColorHover();
-}
+gridCalculate(gridSize);
+squareColorHover();
 
 button.addEventListener('click', () => {
-    enterGrid();
+    gridSize = enterGrid();
     removeGrid();
-    gridCalculate();
+    gridCalculate(gridSize);
     squareColorHover();
 });
-
-game();

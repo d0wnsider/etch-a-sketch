@@ -12,7 +12,8 @@ body {
     align-items: center;
     background: linear-gradient(45deg, #131086, #b621f3);
     overflow: hidden;
-    margin-bottom: 40px;
+    background-repeat: no-repeat;
+    padding-bottom: 200px;
 }
 
 .header {

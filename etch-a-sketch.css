@@ -10,7 +10,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: blueviolet;
+    background: linear-gradient(45deg, #131086, #b621f3);
+    overflow: hidden;
+    margin-bottom: 40px;
 }
 
 .header {

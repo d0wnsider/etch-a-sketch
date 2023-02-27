@@ -4,6 +4,10 @@ const clear = document.querySelector('#clear');
 const randomColor = document.querySelector('#random-color');
 let value = document.querySelector('#color').getAttribute('value');
 const container = document.querySelector('.container');
+const pageAudio = new Audio('sounds/pageturn.mp3');
+const coinAudio = new Audio('sounds/retrocoin.wav');
+const gridAudio = new Audio('sounds/grid.mp3');
+const colorPickerAudio = new Audio('sounds/colorpicker.wav');
 
 gridCalculate = (gridSize) => {
     for (let x = 0; x < gridSize * gridSize; x++) {
@@ -52,6 +56,7 @@ randomColorHover = () => {
             item.style.backgroundColor = getRandomColor();
         });
     });
+    coinAudio.play();
 }
 // random bg colors for button
 setBackgroundColor = () => {
@@ -63,6 +68,7 @@ size.addEventListener('click', () => {
     removeGrid();
     gridCalculate(gridSize);
     squareColorHover(color);
+    gridAudio.play();
 });
 
 clear.addEventListener('click', () => {
@@ -70,10 +76,12 @@ clear.addEventListener('click', () => {
     squareColor.forEach(item => {
             item.style.backgroundColor = '';
     });
+    pageAudio.play();
 });
 
 color.addEventListener('change', (e) => {
     value = e.target.value;
+    colorPickerAudio.play();
 });
 
 randomColor.addEventListener('click', (e) => {

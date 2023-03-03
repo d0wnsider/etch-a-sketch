@@ -2,7 +2,7 @@ let gridSize = 16;
 const size = document.querySelector('#size');
 const clear = document.querySelector('#clear');
 const randomColor = document.querySelector('#random-color');
-let value = document.querySelector('#color').getAttribute('value');
+let value = document.querySelector('#colorpicker').getAttribute('value');
 const container = document.querySelector('.container');
 const pageAudio = new Audio('sounds/pageturn.mp3');
 const coinAudio = new Audio('sounds/retrocoin.wav');
@@ -67,7 +67,7 @@ size.addEventListener('click', () => {
     gridSize = enterGrid();
     removeGrid();
     gridCalculate(gridSize);
-    squareColorHover(color);
+    squareColorHover();
     gridAudio.play();
 });
 
@@ -79,7 +79,8 @@ clear.addEventListener('click', () => {
     pageAudio.play();
 });
 
-color.addEventListener('change', (e) => {
+colorpicker.addEventListener('change', (e) => {
+    squareColorHover();
     value = e.target.value;
     colorPickerAudio.play();
 });

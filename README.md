@@ -1,5 +1,5 @@
 <h1 align="center">Etch-A-Sketch</h1>
-<p align="center"><a href="https://d0wnsider.github.io/calculator">Live Demo Link</a></p>
+<p align="center"><a href="https://d0wnsider.github.io/etch-a-sketch/">Live Demo Link</a></p>
 
 ## About
 * A simple paint like program
